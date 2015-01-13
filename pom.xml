@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>pocketry</artifactId>
     <name>Pocketry</name>
-    <version>1.8.6</version>
+    <version>1.8.6-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for pocketry</description>
     <url>https://github.com/yetu/pocketry</url>
@@ -25,9 +25,9 @@
     </licenses>
 
     <scm>
-        <url>http://github.com:phaus/webjars-pocketry</url>
-        <connection>scm:git:https://github.com:phaus/webjars-pocketry.git</connection>
-        <developerConnection>scm:git:https://github.com:phaus/webjars-pocketry.git</developerConnection>
+        <url>https://github.com/webjars/pocketry</url>
+        <connection>scm:git:https://github.com/webjars/pocketry.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/pocketry.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
@@ -59,7 +59,7 @@
         <requirejs>
             {
                 "paths": {
-                    "pocketry": "dist"
+                    "pocketry": "pocketry"
                 }
             }
         </requirejs>
@@ -96,8 +96,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/pocketry-${upstreamVersion}/" includes="dist/, example/" />
-                                    <fileset dir="${project.build.directory}/pocketry-${upstreamVersion}/" includes="README.md,LICENSE" />                                    
+                                    <fileset dir="${project.build.directory}/pocketry-${upstreamVersion}/dist"/>
                                 </move>
                             </target>
                         </configuration>
